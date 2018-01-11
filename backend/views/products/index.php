@@ -3,6 +3,7 @@
 use common\models\Products;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\ProductsSearch */
@@ -70,3 +71,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
     </div>
 </section>
+<?php $this->registerJs('listenerChangeStatus("'.Url::to(["/products/status"]).'");'); ?>

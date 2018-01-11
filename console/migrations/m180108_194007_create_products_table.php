@@ -42,9 +42,21 @@ class m180108_194007_create_products_table extends Migration
             'updated_at' => $this->integer()->null()->comment("Update date"),
         ], $tableOptions);
 
+        $this->createTable('ximages', [
+            'id'         => $this->primaryKey(),
+            'product_id' => $this->integer()->notNull(),
+            'file'       => $this->string()->notNull(),
+
+            'status'     => $this->smallInteger()->notNull()->defaultValue(0),
+            'created_at' => $this->integer()->null()->comment("Creation date"),
+            'updated_at' => $this->integer()->null()->comment("Update date"),
+        ], $tableOptions);
+
         $this->createIndex('idx-xproducts-category_id', 'xproducts', 'category_id');
+        $this->createIndex('idx-ximages-product_id', 'ximages', 'product_id');
 
         $this->addForeignKey('fk_xproducts_xcategories', 'xproducts', 'category_id', 'xcategories', 'id', 'CASCADE', 'CASCADE');
+        $this->addForeignKey('fk_ximages_xproducts', 'ximages', 'product_id', 'xproducts', 'id', 'CASCADE', 'CASCADE');
     }
 
     /**
@@ -52,8 +64,10 @@ class m180108_194007_create_products_table extends Migration
      */
     public function down()
     {
+        $this->dropForeignKey('fk_ximages_xproducts', 'ximages');
         $this->dropForeignKey('fk_xproducts_xcategories', 'xproducts');
 
+        $this->dropIndex('idx-ximages-product_id', 'ximages');
         $this->dropIndex('idx-xproducts-category_id', 'xproducts');
 
         $this->dropTable('xproducts');

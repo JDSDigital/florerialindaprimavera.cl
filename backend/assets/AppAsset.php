@@ -22,11 +22,11 @@ class AppAsset extends AssetBundle
         'css/core.min.css',
         'css/components.min.css',
         'css/colors.min.css',
-        'css/custom.css',
+//        'css/custom.css',
     ];
 
     public $js = [
-//        'js/yii/yii_overrides.js',
+        'js/yii/yii_overrides.js',
         'js/plugins/loaders/pace.min.js',
         'js/core/libraries/bootstrap.min.js',
         'js/plugins/forms/selects/bootstrap_multiselect.js',
@@ -40,6 +40,7 @@ class AppAsset extends AssetBundle
         'js/plugins/pickers/daterangepicker.js',
         'js/plugins/editors/ckeditor/ckeditor.js',
         'js/core/app.js',
+        'js/yii/script.js',
     ];
 
     public $depends = [

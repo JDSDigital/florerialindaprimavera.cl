@@ -3,6 +3,7 @@
 use common\models\Categories;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\CategoriesSearch */
@@ -65,3 +66,4 @@ $this->params['breadcrumbs'][] = $this->title;
 		]); ?>
 	</div>
 </section>
+<?php $this->registerJs('listenerChangeStatus("'.Url::to(["/categories/status"]).'");'); ?>

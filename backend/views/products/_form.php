@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Products */
@@ -9,7 +10,12 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<?php $form = ActiveForm::begin(['id' => 'form-products']); ?>
+<?php $form = ActiveForm::begin([
+    'options' => [
+        'id' => 'form-products',
+        'enctype' => 'multipart/form-data',
+    ]
+]); ?>
 
     <div class="row">
         <div class="col-sm-12">
@@ -41,6 +47,32 @@ use yii\widgets\ActiveForm;
                                     <?= $form->field($model, 'description')->textArea(['maxlength' => true]) ?>
                                 </div>
                             </div>
+                            <div class="row">
+                            <div class="col-sm-12">
+                                <?= $form->field($image, 'file', [
+                                    'inputTemplate' => '<div class="input-group"><span class="input-group-addon"></span>{input}</div>',
+                                ])->widget(FileInput::className(), [
+                                    'name' => 'file',
+                                    'options'       => [
+                                        'accept' => 'image/*'
+                                    ],
+                                    'pluginOptions' => [
+                                        'allowedFileExtensions'=>['jpg', 'jpeg', 'png', 'gif'],
+                                        'maxFileSize' => 2800,
+                                        'maxFileCount' => 1,
+                                        'showUpload' => false,
+                                        'showDelete' => true,
+                                        'previewFileType' => 'image',
+                                        'overwriteInitial' => false,
+                                        'initialPreview' => isset($previews) ? $previews : false,
+                                        'initialPreviewAsData' => true,
+                                        'initialPreviewShowDelete' => true,
+                                        'initialPreviewConfig' => isset($previewsConfig) ? $previewsConfig : false,
+                                    ],
+
+                                ]); ?>
+                            </div>
+                        </div>
 
                             <div class="row">
                                 <div class="col-sm-12">
