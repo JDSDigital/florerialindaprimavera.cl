@@ -3,18 +3,11 @@ namespace frontend\controllers;
 
 use common\models\Categories;
 use common\models\Products;
-use Yii;
-use yii\base\InvalidParamException;
 use yii\data\Pagination;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -100,9 +93,32 @@ class ProductsController extends Controller
      *
      * @return mixed
      */
-    public function actionView()
+    public function actionView($id)
     {
-        return $this->render('view');
+        $product = $this->findModel($id);
+        $categories = Categories::find()
+            ->where([Categories::tableName() . '.status' => Categories::STATUS_ACTIVE])
+            ->all();
+
+        return $this->render('view', [
+            'product' => $product,
+            'categories' => $categories,
+        ]);
     }
 
+    /**
+     * Finds the Products model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Products the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Products::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 }

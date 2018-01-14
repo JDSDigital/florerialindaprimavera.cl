@@ -15,6 +15,10 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 
+$this->registerMetaTag(['name' => 'author', 'content' => 'geknology.com']);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Arreglos florales para cualquier ocasión. Estamos ubicados en Santiago de Chile.']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => 'floreria, floristeria, flores, arreglos, florales, santiago, chile']);
+
 $categories = Categories::find()->where(['status' => Categories::STATUS_ACTIVE])->limit(4)->orderBy(['rand()' => SORT_DESC])->all();
 $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limit(6)->orderBy(['rand()' => SORT_DESC])->all();
 
