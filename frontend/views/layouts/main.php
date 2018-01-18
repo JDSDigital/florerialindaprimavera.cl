@@ -21,7 +21,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'floreria, floristeri
 
 $categories = Categories::find()->where(['status' => Categories::STATUS_ACTIVE])->limit(4)->orderBy(['rand()' => SORT_DESC])->all();
 $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limit(6)->orderBy(['rand()' => SORT_DESC])->all();
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -59,10 +58,26 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
     NavBar::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+    <?php if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') : ?>
+    <?php else : ?>
+        <!-- Page Header -->
+        <header class="titlebar titlebar1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="page-title pull-left"><?= $this->title ?></h1>
+                        <?= Breadcrumbs::widget([
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'options' => [
+                                'class' => 'breadcrumb pull-right'
+                            ]
+                        ]) ?>
+                    </div>
+                </div>
+            </div>
+        </header> <!-- END Page Header -->
+    <?php endif; ?>
+    <div class="">
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>

@@ -5,9 +5,9 @@
 use yii\helpers\Html;
 
 $this->title = 'Categorías';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-categories">
+<div class="container site-categories pt40 pb40">
     <div class="row shop-products">
         <?php foreach ($categories as $category) : ?>
             <div class="col-sm-6 col-md-4 col-lg-3">

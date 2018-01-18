@@ -5,9 +5,11 @@
 use yii\helpers\Html;
 
 $this->title = 'Nuestros Productos';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Categorías', 'url' => ['/categories/index']];
+$this->params['breadcrumbs'][] = ['label' => $product->category->name, 'url' => ['index', 'id' => $product->category_id]];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-products">
+<div class="container site-products">
     <section class="shop-wsection wsection-4">
 		<div class="container">
 			<div class="row">

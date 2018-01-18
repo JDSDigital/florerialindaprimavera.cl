@@ -8,38 +8,43 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Contact';
+$this->title = 'Contacto';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="site-contact wsection page-contact pt0">
+    <iframe src="https://maps.google.com/?ie=UTF8&amp;q=-33.4481965,-70.6673917&amp;spn=0.031112,0.038581&amp;t=m&amp;z=15&amp;output=embed"></iframe>
+    <div class="container mt40">
+        <div class="row">
+            <div class="col-lg-7 contact-wsection" style="color: inherit;">
+                <h2 class="wsection-title st2 text-left mt10 mb25">Comunícate con nosotros</h2>
+                <p class="contact-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum sunt nemo enim pariatur nesciunt id voluptatibus non!</p>
+                <address class="mb50">
+                    <p><i class="fa fa-map-marker"></i>  Santiago, Chile</p>
+                    <p><i class="fa fa-phone"></i>  +56 1 2345 6789</p>
+                    <p><i class="fa fa-envelope"></i>  admin@floreríalindaprimavera.cl</p>
+                </address>
+            </div>
+            <div class="col-lg-5">
+                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-    <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-    </p>
+                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                    <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                    <?= $form->field($model, 'subject') ?>
 
-                <?= $form->field($model, 'email') ?>
+                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-                <?= $form->field($model, 'subject') ?>
+                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    ]) ?>
 
-                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                    <div class="form-group">
+                        <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    </div>
 
-                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
-
 </div>

@@ -136,3 +136,6 @@ a.desc:after {
     object-fit: cover;
     position: relative;
 }
+.contact-wsection address, .contact-wsection, .contact-wsection .wsection-title, .contact-wsection .box-title {
+    color: inherit;
+}

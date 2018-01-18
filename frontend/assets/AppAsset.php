@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'inc/font-awesome/css/font-awesome.min.css',
         'inc/animate.css',
         'inc/rs-plugin/css/settings.css',
+        'css/master.css',
         'css/style.css',
         'css/site.css',
     ];

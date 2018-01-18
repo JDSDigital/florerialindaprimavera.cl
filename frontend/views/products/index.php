@@ -6,9 +6,10 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
 $this->title = 'Nuestros Productos';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Categorías', 'url' => ['/categories/index']];
+$this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->category->name : $this->title;
 ?>
-<div class="site-products">
+<div class="container site-products pt40 pb40">
     <section class="shop-wsection ">
 		<div class="container">
 			<div class="row">

@@ -4,7 +4,7 @@
 
 $this->title = 'Florería Linda Primavera';
 ?>
-<div class="site-index">
+<div class="container site-index pt40 pb40">
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
