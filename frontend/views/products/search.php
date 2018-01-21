@@ -7,8 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
 $this->title = 'Nuestros Productos';
-$this->params['breadcrumbs'][] = ['label' => 'Categorías', 'url' => ['/categories/index']];
-$this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->category->name : $this->title;
+$this->params['breadcrumbs'][] = 'Búsqueda';
 ?>
 <div class="container site-products pt40 pb40">
     <section class="shop-wsection ">
@@ -52,7 +51,7 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
 								'id' => 'form-products-search',
 								'action' => ['products/search'],
 							]); ?>
-								<div class="input-group">
+							<div class="input-group">
 									<?= $form->field($productsSearch, 'name')
 										->textInput([
 											'value' => (isset(Yii::$app->request->post()['search'])) ? Yii::$app->request->post()['search'] : $productsSearch->name,
@@ -60,7 +59,7 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
 											'placeholder' => ' Buscar'])
 										->label(false)
 									?>
-									<span class="input-group-btn">
+								<span class="input-group-btn">
 										<?= Html::submitButton('<i class="fa fa-search"></i>', [
 											'class' => 'btn btn-primary mt10',
 										]) ?>

@@ -136,6 +136,12 @@ a.desc:after {
     object-fit: cover;
     position: relative;
 }
+.portfolio-inner-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+}
 .contact-wsection address, .contact-wsection, .contact-wsection .wsection-title, .contact-wsection .box-title {
     color: inherit;
 }

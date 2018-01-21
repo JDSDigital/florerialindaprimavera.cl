@@ -3,6 +3,8 @@ namespace frontend\controllers;
 
 use common\models\Categories;
 use common\models\Products;
+use frontend\models\ProductsSearchForm;
+use Yii;
 use yii\data\Pagination;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -77,6 +79,8 @@ class ProductsController extends Controller
             ->where([Categories::tableName() . '.status' => Categories::STATUS_ACTIVE])
             ->all();
 
+        $productsSearch = new ProductsSearchForm();
+
         $count = $query->count();
         $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 6]);
         $products = $query->offset($pagination->offset)->limit(6)->all();
@@ -85,6 +89,44 @@ class ProductsController extends Controller
             'products' => $products,
             'categories' => $categories,
             'pagination' => $pagination,
+            'productsSearch' => $productsSearch,
+        ]);
+    }
+
+    /**
+     * Displays Products index view.
+     *
+     * @return mixed
+     */
+    public function actionSearch()
+    {
+        $query = Products::find()
+            ->where(['status' => Products::STATUS_ACTIVE])
+            ->orderBy('name');
+
+        $categories = Categories::find()
+            ->where([Categories::tableName() . '.status' => Categories::STATUS_ACTIVE])
+            ->all();
+
+        $productsSearch = new ProductsSearchForm();
+
+        /**
+         * Adds data from the search form if exists
+         */
+        if ($productsSearch->load(Yii::$app->request->post())) {
+            if ($productsSearch->name != '')
+                $query->andWhere(['like', 'name', $productsSearch->name]);
+        }
+
+        $count = $query->count();
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 6]);
+        $products = $query->offset($pagination->offset)->limit(6)->all();
+
+        return $this->render('index', [
+            'products' => $products,
+            'categories' => $categories,
+            'pagination' => $pagination,
+            'productsSearch' => $productsSearch,
         ]);
     }
 
@@ -99,10 +141,12 @@ class ProductsController extends Controller
         $categories = Categories::find()
             ->where([Categories::tableName() . '.status' => Categories::STATUS_ACTIVE])
             ->all();
+        $productsSearch = new ProductsSearchForm();
 
         return $this->render('view', [
             'product' => $product,
             'categories' => $categories,
+            'productsSearch' => $productsSearch,
         ]);
     }
 
