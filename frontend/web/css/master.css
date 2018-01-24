@@ -3,6 +3,9 @@
  * M & P
  *
  *--------------*/
+.m0a {
+    margin: 0 auto;
+}
 .mb0 {
     margin-bottom : 0px !important;
 }

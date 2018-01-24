@@ -19,6 +19,29 @@ $this->registerMetaTag(['name' => 'author', 'content' => 'geknology.com']);
 $this->registerMetaTag(['name' => 'description', 'content' => 'Arreglos florales para cualquier ocasión. Estamos ubicados en Santiago de Chile.']);
 $this->registerMetaTag(['name' => 'keywords', 'content' => 'floreria, floristeria, flores, arreglos, florales, santiago, chile']);
 
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '196x196', 'href' => Yii::getAlias('@web') . '/images/favicon-196x196.png']);
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '96x96', 'href' => Yii::getAlias('@web') . '/images/favicon-96x96.png']);
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => Yii::getAlias('@web') . '/images/favicon-32x32.png']);
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '16x16', 'href' => Yii::getAlias('@web') . '/images/favicon-16x16.png']);
+$this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'sizes' => '128x128', 'href' => Yii::getAlias('@web') . '/images/favicon-128.png']);
+
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '57x57', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-57x57.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '114x114', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-114x114.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '72x72', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-72x72.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '144x144', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-144x144.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '60x60', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-60x60.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '120x120', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-120x120.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '76x76', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-76x76.png']);
+$this->registerLinkTag(['rel' => 'apple-touch-icon-precomposed', 'sizes' => '152x152', 'href' => Yii::getAlias('@web') . '/images/apple-touch-icon-152x152.png']);
+
+$this->registerMetaTag(['name' => 'application-name', 'content' => 'Floreria Linda Primavera']);
+$this->registerMetaTag(['name' => 'msapplication-TileColor', 'content' => '#FFFFFF']);
+$this->registerMetaTag(['name' => 'msapplication-TileImage', 'content' => './images/mstile-144x144.png']);
+$this->registerMetaTag(['name' => 'msapplication-square70x70logo', 'content' => './images/mstile-70x70.png']);
+$this->registerMetaTag(['name' => 'msapplication-square150x150logo', 'content' => './images/mstile-150x150.png']);
+$this->registerMetaTag(['name' => 'msapplication-wide310x150logo', 'content' => './images/mstile-310x150.png']);
+$this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' => './images/mstile-310x310.png']);
+
 $categories = Categories::find()->where(['status' => Categories::STATUS_ACTIVE])->limit(4)->orderBy(['rand()' => SORT_DESC])->all();
 $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limit(6)->orderBy(['rand()' => SORT_DESC])->all();
 ?>
@@ -39,7 +62,8 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Florería Linda Primavera',
+        'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo3.png', ['class' => 'nav-logo img-responsive', 'alt' => 'Florería Linda Primavera']),
+        'brandOptions' => ['class' => 'pt5 pb5'],
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'header-wrapper top-border main-header',
@@ -89,21 +113,23 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
     <div class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-4">
                     <div class="row">
                         <div class="col-sm-12 col-md-11">
                             <div class="footer-widget">
-                                <h3 class="widget-title">Quienes Somos</h3>
-                                <p class="mb25">Lorem ipsum dolor sit amet domo, consectetur adipisicing elit. Magnam, aliquam? Sequi dolore alias voluptate officiis nemo natus dolorum.</p>
+                                <div class="text-center">
+                                    <?= Html::img(Yii::getAlias('@web') . '/images/logo-white.png', ['class' => 'img-responsive logo-footer m0a']) ?>
+                                    <p class="mb25">Piensa en flores, piensa en Linda Primavera</p>
+                                </div>
                                 <address class="contact-info">
-                                    <p><i class="fa fa-map-marker box-icon color-white"></i>  Santiago, Chile</p>
-                                    <p><i class="fa fa-phone box-icon color-white"></i>  +56 1 2345 6789</p>
+                                    <p><i class="fa fa-map-marker box-icon color-white"></i>  Marcoleta 372 - Local 24. Santiago, Chile</p>
+                                    <p><i class="fa fa-phone box-icon color-white"></i>  +56 9 7818 1442</p>
                                 </address>
                             </div> <!-- END Footer Widget Keep in touch -->
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-8">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="footer-widget">

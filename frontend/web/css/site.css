@@ -145,3 +145,9 @@ a.desc:after {
 .contact-wsection address, .contact-wsection, .contact-wsection .wsection-title, .contact-wsection .box-title {
     color: inherit;
 }
+.nav-logo{
+    max-height: 65px;
+}
+.logo-footer {
+    max-height: 150px;
+}
