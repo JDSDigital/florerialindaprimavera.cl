@@ -151,3 +151,6 @@ a.desc:after {
 .logo-footer {
     max-height: 120px;
 }
+.widget-product-name h2 {
+    color: #FFF;;
+}

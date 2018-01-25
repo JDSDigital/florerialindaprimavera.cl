@@ -55,21 +55,24 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-sm-4 xs-box2 wbr-box">
                 <div class="box-content">
-                    <i class="fa fa-star fa-services"></i>
+<!--                    <i class="fa fa-star fa-services"></i>-->
+                    <?= Html::img(Yii::getAlias('@web') . '/images/icons/full-color/128px/star.png') ?>
                     <h3>Experiencia</h3>
                     <p>Tenemos mas de XX años de experiencia en arreglos florales</p>
                 </div>
             </div>
             <div class="col-sm-4 xs-box2 wbr-box">
                 <div class="box-content">
-                    <i class="fa fa-weixin fa-services"></i>
+<!--                    <i class="fa fa-weixin fa-services"></i>-->
+                    <?= Html::img(Yii::getAlias('@web') . '/images/icons/full-color/128px/heart.png') ?>
                     <h3>Clientes Satisfechos</h3>
-                    <p>Podemos cumplir cualquier deseo que puedas pensar.</p>
+                    <p>Podemos cumplir cualquier deseo que puedas imaginar.</p>
                 </div>
             </div>
             <div class="col-sm-4 wbr-box last">
                 <div class="box-content">
-                    <i class="fa fa-check-square-o fa-services"></i>
+<!--                    <i class="fa fa-check-square-o fa-services"></i>-->
+                    <?= Html::img(Yii::getAlias('@web') . '/images/icons/full-color/128px/brightness.png') ?>
                     <h3>Nuevos Conceptos</h3>
                     <p>Constantemente estamos realizando nuevos diseños para cualquier ocasión.</p>
                 </div>

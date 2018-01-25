@@ -26,8 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
 						<div class="col-sm-12 col-md-7">
 							<div class="shop-description-product">
 								<h3><?= $product->name ?></h3>
-								<div class="rating-system rate-product"></div>
-								<small><?= $product->category->name ?></small>
 								<div class="shop-prices">
 									<ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
 								</div>

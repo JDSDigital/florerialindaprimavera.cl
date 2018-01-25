@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Products;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -50,7 +51,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Products::find()
+            ->where(['status' => Products::STATUS_ACTIVE])
+            ->limit(8)
+            ->orderBy(['rand()' => SORT_DESC])
+            ->all();
+
+        return $this->render('index', [
+            'products' => $products,
+        ]);
     }
 
     /**

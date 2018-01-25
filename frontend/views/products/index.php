@@ -26,12 +26,12 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
                                 <div class="col-sm-12 col-md-8">
                                     <div class="shop-description">
                                         <h4><?= $product->name ?></h4>
-                                        <p><?= $product->summary ?></p>
                                         <div class="price">
                                             <ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
                                         </div>
+                                        <p><?= $product->summary ?></p>
                                         <div class="shop-buy">
-                                            <?= Html::a('<i class="fa fa-search"></i> Ver detalles', ['//products/view', 'id' => $product->id], ['class' => 'btn']) ?>
+                                            <?= Html::a('<i class="fa fa-search"></i> Ver detalles', ['//products/view', 'id' => $product->id], ['class' => 'btn pl0']) ?>
                                         </div>
                                     </div>
                                 </div>

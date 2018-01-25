@@ -2,52 +2,45 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Html;
+
 $this->title = 'Florería Linda Primavera';
 ?>
-<div class="container site-index pt40 pb40">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<div class="container site-index pt40 pb40"></div>
+<!-- Products Section -->
+<section class="wsection-full-width">
+    <div class="row text-center">
+        <h2>Algunos de nuestros productos</h2>
+        <div class="wdivider d3 w25"></div>
     </div>
-
-    <div class="body-content">
-
+    <div class="row portfolio-full-width">
+        <?php foreach ($products as $product) : ?>
+            <div class="col-sm-4 col-md-3">
+                <div class="portfolio-inner-item view">
+                    <?= Html::img(Yii::getAlias('@web') . '/uploads/products/' . $product->image->file, ['alt' => $product->name]) ?>
+                    <div class="mask">
+                        <div class="mask-bordered">
+                            <div class="widget-product-name align-middle">
+                                <h2><?= $product->name ?></h2>
+                                <p class="project-actions">
+                                    <?= Html::a('<i class="fa fa-search"></i>', ['/products/view', 'id' => $product->id]) ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- END portfolio Item -->
+        <?php endforeach; ?>
+    </div>
+</section>
+<!-- End Products Section -->
+<section class="wsection-3 custom-wsection cs2 mt0 mb0">
+    <div class="container animated" data-anim="bounceIn">
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="col-sm-12 text-center">
+                <h2 class="wsection-title st2 mb25">Si te gusta lo que ves, mira todos nuestros productos</h2>
+                <?= Html::a('Nuestros Productos', ['/categories/index'], ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
-
     </div>
-</div>
+</section>
