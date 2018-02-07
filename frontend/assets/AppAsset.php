@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'inc/font-awesome/css/font-awesome.min.css',
         'inc/animate.css',
         'inc/rs-plugin/css/settings.css',
+        'css/vegas.min.css',
         'css/master.css',
         'css/style.css',
         'css/site.css',
@@ -30,6 +31,7 @@ class AppAsset extends AssetBundle
         'inc/retina.min.js',
         'inc/jflickrfeed.min.js',
 //        'inc/jquery.validate.min.js',
+        'js/vegas.min.js',
         'js/script.js',
     ];
     public $depends = [

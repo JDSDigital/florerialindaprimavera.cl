@@ -34,9 +34,10 @@ class Images extends ActiveRecord
     public function rules()
     {
         return [
-            [['product_id', 'file'], 'required'],
+            [['product_id'], 'required'],
+            [['file'], 'required', 'on'=> 'create'],
             [['product_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['file'], 'string', 'max' => 255],
+            [['file'], 'string', 'max' => 255, 'skipOnEmpty' => true],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Products::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }

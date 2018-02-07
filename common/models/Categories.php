@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "xcategories".
@@ -77,5 +78,26 @@ class Categories extends ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Products::className(), ['category_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages()
+    {
+        return $this->hasMany(Images::className(), ['product_id' => 'id'])->via('products');
+    }
+
+    /**
+     * @return array
+     */
+    public function getVegasImages()
+    {
+        $images = $this->images;
+        $response = [];
+        foreach ($images as $image)
+            array_push($response, '../uploads/products/' . $image->file);
+
+        return json_encode($response);
     }
 }

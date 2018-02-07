@@ -146,8 +146,8 @@ class ProductsController extends Controller
                 // if there isn't... delete
                 if (file_exists('uploads/products/' . $prev_image))
                     $model->image_file = $prev_image;
-                else
-                    $model->image_file = null;
+                /*else
+                    $model->image_file = null;*/
             }
 
             return $this->redirect('index');

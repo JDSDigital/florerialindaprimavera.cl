@@ -6,31 +6,38 @@ use yii\helpers\Html;
 
 $this->title = 'Florería Linda Primavera';
 ?>
-<div class="container site-index pt40 pb40"></div>
+<div class="container site-index"></div>
+<section class="pb40">
+    <?= Html::img(Yii::getAlias('@web') . '/images/slider1.jpg') ?>
+</section>
 <!-- Products Section -->
 <section class="wsection-full-width">
-    <div class="row text-center">
-        <h2>Algunos de nuestros productos</h2>
-        <div class="wdivider d3 w25"></div>
-    </div>
-    <div class="row portfolio-full-width">
-        <?php foreach ($products as $product) : ?>
-            <div class="col-sm-4 col-md-3">
-                <div class="portfolio-inner-item view">
-                    <?= Html::img(Yii::getAlias('@web') . '/uploads/products/' . $product->image->file, ['alt' => $product->name]) ?>
-                    <div class="mask">
-                        <div class="mask-bordered">
-                            <div class="widget-product-name align-middle">
-                                <h2><?= $product->name ?></h2>
-                                <p class="project-actions">
-                                    <?= Html::a('<i class="fa fa-search"></i>', ['/products/view', 'id' => $product->id]) ?>
-                                </p>
+    <div class="container">
+        <div class="row text-center">
+            <h2>Algunos de nuestros productos</h2>
+            <div class="wdivider d3 w25"></div>
+        </div>
+        <div class="row shop-products">
+            <?php foreach ($products as $product) : ?>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <figure class="shop-product">
+                        <div class="shop-image">
+                            <?= (isset($product->image->file)) ? Html::img(['uploads/products/' . $product->image->file]) : '' ?>
+                            <div class="shop-actions">
+                                <p><?= $product->summary ?></p>
+                                <?= Html::a('<i class="fa fa-search"></i>', ['//products/view', 'id' => $product->id], ['class' => 'btn see', 'data-toggle' => 'tooltip', 'title' => $product->name]) ?>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div> <!-- END portfolio Item -->
-        <?php endforeach; ?>
+                        <figcaption class="shop-description">
+                            <h4><?= $product->name ?></h4>
+                            <div class="pull-center">
+                                <ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div> <!-- END shop Item -->
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 <!-- End Products Section -->

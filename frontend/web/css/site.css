@@ -154,3 +154,30 @@ a.desc:after {
 .widget-product-name h2 {
     color: #FFF;;
 }
+.shop-actions .btn .fa {
+	font-size: 30px;
+}
+.footer-wrapper {
+    /*background: #303030;*/
+    /*color: #e0e0e0;*/
+    /*background: #CE5D0D;*/
+    /*color: #303030;*/
+}
+.titlebar.titlebar1, .custom-wsection, .custom-wsection.cs2, .box-about, .box-icon, .back-to-top, .wdivider.d3:after, .sidebar-widget .input-group .btn, .pagination .active a, .contact-wsection address .fa, .view .info:hover, .view .info:focus {
+    background-color: #338E3F;
+}
+.main-color, .menu > li.active > a, .shop-price, .footer a, .footer-wrapper a:hover, .shop-actions a, .shop-buy a, .sidebar-widget .categories li:hover a, .sidebar-widget .categories .active a {
+    color: #338E3F !important;
+}
+.footer-wrapper, .shop-product:hover, .sidebar-widget .input-group .btn, .form-control:focus {
+    border-color: #338E3F;
+}
+.sidebar-widget .input-group .btn:hover, .sidebar-widget .input-group .btn:focus, .pagination .active a:hover, .pagination li a:hover {
+	background-color: rgba(51, 142, 63, 0.8);
+}
+.shop-buy a:hover {
+	color: rgba(51, 142, 63, 0.8);
+}
+.portfolio-inner-item {
+    height: 300px;
+}

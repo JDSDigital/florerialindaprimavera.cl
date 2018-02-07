@@ -1,6 +1,6 @@
 /* -----------------------------------------------------------------
 
-Template Name: Wepa One - Responsive HTML5 and CSS3 Website Template 
+Template Name: Responsive HTML5 and CSS3 Website Template
 Version: 1.0
 Author: abusinesstheme
 Website: http://abusinesstheme.com
