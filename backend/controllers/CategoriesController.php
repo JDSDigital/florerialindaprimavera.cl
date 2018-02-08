@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Products;
 use Yii;
 use common\models\Categories;
 use common\models\search\CategoriesSearch;
@@ -104,7 +105,15 @@ class CategoriesController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        foreach ($model->products as $product) {
+            // Delete image from the folder
+            unlink('../../frontend/web/uploads/products/' . $product->image->file);
+            Products::findOne(['id' => $product->id])->delete();
+        }
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

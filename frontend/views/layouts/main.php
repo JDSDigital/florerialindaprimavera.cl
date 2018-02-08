@@ -43,7 +43,7 @@ $this->registerMetaTag(['name' => 'msapplication-wide310x150logo', 'content' => 
 $this->registerMetaTag(['name' => 'msapplication-square310x310logo', 'content' => './images/mstile-310x310.png']);
 
 $categories = Categories::find()->where(['status' => Categories::STATUS_ACTIVE])->limit(4)->orderBy(['rand()' => SORT_DESC])->all();
-$products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limit(6)->orderBy(['rand()' => SORT_DESC])->all();
+$products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limit(8)->orderBy(['rand()' => SORT_DESC])->all();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -60,13 +60,25 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <div class="nav-contact">
+        <div class="container">
+            <div class="row vertical-align">
+                <div class="col-xs-6 text-left">
+                    <p class="m0">CONTACTO: +56 9 7818 1442 | admin@floreríalindaprimavera.cl</p>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <p class="m0"><a target="_blank" title="Facebook" href="https://www.facebook.com/Floreria-Linda-Primavera-1924980567819540/"><i class="fa fa-facebook box-icon color-white facebook"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
     NavBar::begin([
         'brandLabel' => Html::img(Yii::getAlias('@web') . '/images/logo3.png', ['class' => 'nav-logo img-responsive', 'alt' => 'Florería Linda Primavera']),
         'brandOptions' => ['class' => 'pt5 pb5'],
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'header-wrapper top-border main-header',
+            'class' => 'header-wrapper main-header',
         ],
     ]);
     $menuItems = [
@@ -124,6 +136,7 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
                                 <address class="contact-info">
                                     <p><i class="fa fa-map-marker box-icon color-white"></i>  Marcoleta 372 - Local 24. Santiago, Chile</p>
                                     <p><i class="fa fa-phone box-icon color-white"></i>  +56 9 7818 1442</p>
+                                    <p><i class="fa fa-envelope box-icon color-white"></i>  admin@floreríalindaprimavera.cl</p>
                                 </address>
                             </div> <!-- END Footer Widget Keep in touch -->
                         </div>

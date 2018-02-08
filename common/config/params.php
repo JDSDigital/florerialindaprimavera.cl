@@ -1,6 +1,6 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
-    'supportEmail' => 'support@example.com',
+    'adminEmail' => 'jdsosa@gmail.com',
+    'supportEmail' => 'no-responder@florerialindaprimavera.cl',
     'user.passwordResetTokenExpire' => 3600,
 ];

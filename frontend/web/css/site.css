@@ -2,7 +2,10 @@ html,
 body {
     height: 100%;
 }
-
+.vertical-align {
+    display: flex !important;
+    align-items: center !important;
+}
 .wrap {
     min-height: 100%;
     height: auto;
@@ -180,4 +183,21 @@ a.desc:after {
 }
 .portfolio-inner-item {
     height: 300px;
+}
+.facebook {
+    background-color: #4267B2 !important;
+}
+.nav-contact {
+    /*height: 50px;*/
+    background-color: #eee;
+}
+.nav-contact .row {
+    margin: 5px 0;
+}
+.nav-contact .row p {
+    font-size: 13px;
+    /*text-transform: uppercase;*/
+}
+.carousel img {
+    width: 100%;
 }

@@ -60,6 +60,13 @@ $this->params['breadcrumbs'][] = $this->title;
 				[
 					'class'          => 'yii\grid\ActionColumn',
 					'template'       => '{ul}{update}{delete}',
+					'buttons'        => [
+						'delete' => function ($url, $model, $key) {
+							return <<<HTML
+                                <a id="delete-$key" class="btn-delete" title="Borrar $model->name" data-method="post" href="$url"><i class="fa fa-lg fa-trash fa-actions"></i></a>
+HTML;
+						},
+					],
 					'contentOptions' => ['style' => 'width: 80px;min-width: 50px'],
 				],
 			],
