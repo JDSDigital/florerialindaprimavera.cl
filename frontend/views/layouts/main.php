@@ -63,10 +63,10 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
     <div class="nav-contact">
         <div class="container">
             <div class="row vertical-align">
-                <div class="col-xs-6 text-left">
-                    <p class="m0">CONTACTO: +56 9 7818 1442 | admin@floreríalindaprimavera.cl</p>
+                <div class="col-xs-10 text-left">
+                    <p class="m0">CONTACTO: +56 9 7818 1442 | contacto@floreríalindaprimavera.cl</p>
                 </div>
-                <div class="col-xs-6 text-right">
+                <div class="col-xs-2 text-right">
                     <p class="m0"><a target="_blank" title="Facebook" href="https://www.facebook.com/Floreria-Linda-Primavera-1924980567819540/"><i class="fa fa-facebook box-icon color-white facebook"></i></a></p>
                 </div>
             </div>
@@ -144,7 +144,7 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 hidden-xs">
                             <div class="footer-widget">
                                 <h3 class="widget-title">Nuestras Categorías</h3>
                                 <ul class="footer-posts">
@@ -154,7 +154,7 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
                                 </ul>
                             </div> <!-- END Latest posts -->
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 hidden-xs">
                             <div class="footer-widget">
                                 <h3 class="widget-title">Nuestros Productos</h3>
                                 <ul id="" class="footer-projects">
@@ -174,9 +174,9 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
 <div class="footer">
     <div class="container">
         <div class="pull-left">
-            <p>Copyright © <?= date('Y') ?> <?= Html::a('Remesas.cl',['//site/index']) ?> / Diseño y desarrollo por <?= Html::a('Geknology', Url::to('http://www.geknology.com/')) ?></p>
+            <p>Copyright © <?= date('Y') ?> <?= Html::a('florerialindaprimavera.cl',['//site/index']) ?> / Diseño y desarrollo por <?= Html::a('Geknology', Url::to('http://www.geknology.com/')) ?></p>
         </div>
-        <div class="pull-right">
+        <div class="pull-right hidden-xs">
             <ul class="footer-menu">
                 <li><?= Html::a('Inicio', ['//site/index']) ?></li>
                 <li><?= Html::a('Quienes Somos', ['//site/about']) ?></li>

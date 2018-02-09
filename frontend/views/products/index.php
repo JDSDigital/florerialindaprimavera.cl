@@ -14,7 +14,40 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
     <section class="shop-wsection ">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-7 col-md-9 col-md-push-3 col-sm-push-5 space-left ">
+				<div class="col-sm-5 col-md-3 ">
+					<aside class="sidebar shop-sidebar">
+						<div class="sidebar-widget mt0">
+							<?php $form = ActiveForm::begin([
+								'id' => 'form-products-search',
+								'action' => ['products/search'],
+							]); ?>
+							<div class="input-group">
+									<?= $form->field($productsSearch, 'name')
+										->textInput([
+											'value' => (isset(Yii::$app->request->post()['search'])) ? Yii::$app->request->post()['search'] : $productsSearch->name,
+											'class' => 'form-control',
+											'placeholder' => ' Buscar'])
+										->label(false)
+									?>
+								<span class="input-group-btn">
+										<?= Html::submitButton('<i class="fa fa-search"></i>', [
+											'class' => 'btn btn-primary mt10',
+										]) ?>
+									</span>
+								</div>
+							<?php ActiveForm::end(); ?>
+						</div>
+						<div class="sidebar-widget">
+							<h3 class="sidebar-title">Categorías</h3>
+							<ul class="categories">
+                                <?php foreach ($categories as $category) : ?>
+									<li><?= Html::a($category->name, ['//products/index', 'id' => $category->id]) ?></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					</aside>
+				</div>
+				<div class="col-sm-7 col-md-9">
 					<div class="shop-products list">
                         <?php foreach ($products as $product) : ?>
                             <div class="row shop-product">
@@ -44,39 +77,6 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
 							'class' => 'pagination',
 						]
 					]); ?>
-				</div>
-				<div class="col-sm-5 col-md-3 col-md-pull-9 col-sm-pull-7 ">
-					<aside class="sidebar shop-sidebar">
-						<div class="sidebar-widget mt0">
-							<?php $form = ActiveForm::begin([
-								'id' => 'form-products-search',
-								'action' => ['products/search'],
-							]); ?>
-								<div class="input-group">
-									<?= $form->field($productsSearch, 'name')
-										->textInput([
-											'value' => (isset(Yii::$app->request->post()['search'])) ? Yii::$app->request->post()['search'] : $productsSearch->name,
-											'class' => 'form-control',
-											'placeholder' => ' Buscar'])
-										->label(false)
-									?>
-									<span class="input-group-btn">
-										<?= Html::submitButton('<i class="fa fa-search"></i>', [
-											'class' => 'btn btn-primary mt10',
-										]) ?>
-									</span>
-								</div>
-							<?php ActiveForm::end(); ?>
-						</div>
-						<div class="sidebar-widget">
-							<h3 class="sidebar-title">Categorías</h3>
-							<ul class="categories">
-                                <?php foreach ($categories as $category) : ?>
-                                    <li><?= Html::a($category->name, ['//products/index', 'id' => $category->id]) ?></li>
-                                <?php endforeach; ?>
-							</ul>
-						</div>
-					</aside>
 				</div>
 			</div>
 		</div>

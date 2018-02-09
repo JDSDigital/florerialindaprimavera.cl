@@ -130,7 +130,7 @@ Website: http://abusinesstheme.com
 			}, 
 			mobileMenu: function() {
 
-				var $children = menu.children("li"), 
+				/*var $children = menu.children("li"),
 					$toggle = menu.children("li.toggle-menu"),
 					$notToggle = $children.not("toggle-menu");
 
@@ -169,7 +169,7 @@ Website: http://abusinesstheme.com
 							}
 						});
 					} 
-				});
+				});*/
 			},
 			unbindEvents: function() {
 				menu.find("li, a").off();

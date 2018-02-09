@@ -18,7 +18,7 @@ body {
 }
 
 .footer {
-    height: 60px;
+    /*height: 60px;*/
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
     padding-top: 20px;
@@ -169,7 +169,7 @@ a.desc:after {
 .titlebar.titlebar1, .custom-wsection, .custom-wsection.cs2, .box-about, .box-icon, .back-to-top, .wdivider.d3:after, .sidebar-widget .input-group .btn, .pagination .active a, .contact-wsection address .fa, .view .info:hover, .view .info:focus {
     background-color: #338E3F;
 }
-.main-color, .menu > li.active > a, .shop-price, .footer a, .footer-wrapper a:hover, .shop-actions a, .shop-buy a, .sidebar-widget .categories li:hover a, .sidebar-widget .categories .active a {
+.main-color, .menu > li.active > a, .shop-price, .footer a, .footer-wrapper a:hover, .shop-actions a, .shop-buy a, .sidebar-widget .categories li:hover a, .sidebar-widget .categories .active a, .menu > li > a:hover {
     color: #338E3F !important;
 }
 .footer-wrapper, .shop-product:hover, .sidebar-widget .input-group .btn, .form-control:focus {
@@ -200,4 +200,10 @@ a.desc:after {
 }
 .carousel img {
     width: 100%;
+}
+.navbar-brand {
+    height: auto;
+}
+.icon-bar {
+    background-color: #338E3F !important;
 }

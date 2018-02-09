@@ -944,7 +944,7 @@ Website: http://abusinesstheme.com
 	/* Responsive Menu */
 	@media (max-width: 767px) {
 		.menu > li {
-			display: none;
+			/*display: none;*/
 			width: 100%;
 		}
 		.menu > .toggle-menu {
