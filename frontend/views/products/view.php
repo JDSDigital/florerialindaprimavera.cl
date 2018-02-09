@@ -27,7 +27,9 @@ $this->params['breadcrumbs'][] = $this->title;
 							<div class="shop-description-product">
 								<h3><?= $product->name ?></h3>
 								<div class="shop-prices">
-									<ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
+									<ins class="shop-price">
+										<?= ($product->price != 0 || $product->price != '') ? Yii::$app->formatter->asCurrency($product->price, 'CLP') : Html::a('Solicitar presupuesto', ['site/contact'])?>
+									</ins>
 								</div>
 								<p class="hidden-md"><?= $product->description ?></p>
 							</div>

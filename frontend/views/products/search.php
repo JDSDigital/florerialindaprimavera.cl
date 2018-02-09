@@ -13,38 +13,7 @@ $this->params['breadcrumbs'][] = 'Búsqueda';
     <section class="shop-wsection ">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-7 col-md-9 col-md-push-3 col-sm-push-5 space-left ">
-					<div class="shop-products list">
-                        <?php foreach ($products as $product) : ?>
-                            <div class="row shop-product">
-                                <div class="col-sm-12 col-md-4">
-                                    <div class="shop-image">
-                                        <?= Html::img(['uploads/products/' . $product->image->file]) ?>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <div class="shop-description">
-                                        <h4><?= $product->name ?></h4>
-                                        <p><?= $product->summary ?></p>
-                                        <div class="price">
-                                            <ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
-                                        </div>
-                                        <div class="shop-buy">
-                                            <?= Html::a('<i class="fa fa-search"></i> Ver detalles', ['//products/view', 'id' => $product->id], ['class' => 'btn']) ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-					</div>
-					<?= LinkPager::widget([
-						'pagination' => $pagination,
-						'options' => [
-							'class' => 'pagination',
-						]
-					]); ?>
-				</div>
-				<div class="col-sm-5 col-md-3 col-md-pull-9 col-sm-pull-7 ">
+				<div class="col-sm-5 col-md-3">
 					<aside class="sidebar shop-sidebar">
 						<div class="sidebar-widget mt0">
 							<?php $form = ActiveForm::begin([
@@ -71,11 +40,43 @@ $this->params['breadcrumbs'][] = 'Búsqueda';
 							<h3 class="sidebar-title">Categorías</h3>
 							<ul class="categories">
                                 <?php foreach ($categories as $category) : ?>
-                                    <li><?= Html::a($category->name, ['//products/index', 'id' => $category->id]) ?></li>
-                                <?php endforeach; ?>
+									<li><?= Html::a($category->name, ['//products/index', 'id' => $category->id]) ?></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</aside>
+				</div>
+
+				<div class="col-sm-7 col-md-9">
+					<div class="shop-products list">
+                        <?php foreach ($products as $product) : ?>
+                            <div class="row shop-product">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="shop-image">
+                                        <?= Html::img(['uploads/products/' . $product->image->file]) ?>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-8">
+                                    <div class="shop-description">
+                                        <h4><?= $product->name ?></h4>
+                                        <p><?= $product->summary ?></p>
+                                        <div class="price">
+                                            <ins class="shop-price"><?= ($product->price != 0 || $product->price != '') ? Yii::$app->formatter->asCurrency($product->price, 'CLP') : 'A convenir' ?></ins>
+                                        </div>
+                                        <div class="shop-buy">
+                                            <?= Html::a('<i class="fa fa-search"></i> Ver detalles', ['//products/view', 'id' => $product->id], ['class' => 'btn']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+					</div>
+					<?= LinkPager::widget([
+						'pagination' => $pagination,
+						'options' => [
+							'class' => 'pagination',
+						]
+					]); ?>
 				</div>
 			</div>
 		</div>

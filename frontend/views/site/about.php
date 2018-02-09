@@ -8,14 +8,14 @@ $this->title = 'Quienes Somos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!--<div class="container site-about pt40"></div>-->
-<section class="custom-bg large-padding parallax mt0" data-bg="../images/sliderimages/bokeh.jpg">
-    <div class="bg-layer"></div>
+<section class="custom-bg large-padding parallax mt0" data-bg="../images/bg1.jpg">
+<!--    <div class="bg-layer"></div>-->
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                 <div class="box-about">
                     <h2 class="wsection-title st2 mb30">¡Amamos lo que hacemos!</h2>
-                    <p class="custom-bg-p text-center mb10">Somos tu aliado para creer junto a ti ese gran detalle, para el día del Amor, para la Madre, la Secretaría o cualquier ocacion que desees que tu presencia se manifieste acompañado de las flores.</p>
+                    <p class="custom-bg-p text-center mb10">Somos tu aliado para crear junto a ti ese gran detalle, para el día del Amor, para la Madre, la Secretaría o cualquier ocasión que desees que tu presencia se manifieste acompañado de las flores.</p>
                 </div>
             </div>
         </div>

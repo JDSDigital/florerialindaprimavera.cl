@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = ($products[0]->category->name) ? $products[0]->
                                     <div class="shop-description">
                                         <h4><?= $product->name ?></h4>
                                         <div class="price">
-                                            <ins class="shop-price"><?= Yii::$app->formatter->asCurrency($product->price, 'CLP') ?></ins>
+                                            <ins class="shop-price"><?= ($product->price != 0 || $product->price != '') ? Yii::$app->formatter->asCurrency($product->price, 'CLP') : 'A convenir' ?></ins>
                                         </div>
                                         <p><?= $product->summary ?></p>
                                         <div class="shop-buy">
