@@ -1,6 +1,6 @@
 <?php
 return [
     'adminEmail' => 'jdsosa@gmail.com',
-    'supportEmail' => 'no-responder@florerialindaprimavera.cl',
+    'supportEmail' => 'noresponder@florerialindaprimavera.cl',
     'user.passwordResetTokenExpire' => 3600,
 ];

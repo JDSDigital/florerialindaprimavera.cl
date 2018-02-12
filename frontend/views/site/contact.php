@@ -22,13 +22,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <address class="mb50">
                     <p><i class="fa fa-map-marker"></i>  Marcoleta 372 - Local 24. Santiago, Chile</p>
                     <p><i class="fa fa-phone"></i>  +56 9 7818 1442</p>
-                    <p><i class="fa fa-envelope"></i>  admin@floreríalindaprimavera.cl</p>
+                    <p><i class="fa fa-envelope"></i>  contacto@floreríalindaprimavera.cl</p>
                 </address>
             </div>
             <div class="col-lg-5">
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                    <?= $form->field($model, 'name')->textInput() ?>
 
                     <?= $form->field($model, 'email') ?>
 

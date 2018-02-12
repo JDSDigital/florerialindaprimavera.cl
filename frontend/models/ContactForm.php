@@ -52,13 +52,21 @@ class ContactForm extends Model
      * @param string $email the target email address
      * @return bool whether the email was sent
      */
-    public function sendEmail($email)
+    public function sendEmail()
     {
+        $message = <<<HTML
+            <h4><b>Nombre: </b>$this->name</h4>
+            <h4><b>Correo: </b>$this->email</h4>
+            <h4><b>Asunto: </b>$this->subject</h4>
+            <h4><b>Mensaje: </b></h4>
+            <h4>$this->body</h4>
+HTML;
+
         return Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([Yii::$app->params['supportEmail']])
-            ->setSubject($this->email . ' - ' . $this->name . ' - ' . $this->subject)
-            ->setTextBody($this->body)
+            ->setTo(Yii::$app->params['adminEmail'])
+            ->setFrom([Yii::$app->params['supportEmail'] => 'Florería Linda Primavera'])
+            ->setSubject('Nuevo mensaje desde la página web. Remitente: ' . $this->name . ' - ' . $this->email)
+            ->setHtmlBody($message)
             ->send();
     }
 }

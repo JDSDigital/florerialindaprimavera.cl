@@ -136,7 +136,7 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
                                 <address class="contact-info">
                                     <p><i class="fa fa-map-marker box-icon color-white"></i>  Marcoleta 372 - Local 24. Santiago, Chile</p>
                                     <p><i class="fa fa-phone box-icon color-white"></i>  +56 9 7818 1442</p>
-                                    <p><i class="fa fa-envelope box-icon color-white"></i>  admin@floreríalindaprimavera.cl</p>
+                                    <p><i class="fa fa-envelope box-icon color-white"></i>  contacto@floreríalindaprimavera.cl</p>
                                 </address>
                             </div> <!-- END Footer Widget Keep in touch -->
                         </div>

@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p><i class="fa fa-check main-color"></i> &nbsp; Felicidades.</p>
                 <p><i class="fa fa-check main-color"></i> &nbsp; Gracias.</p>
                 <p><i class="fa fa-check main-color"></i> &nbsp; Perdóname.</p>
-                <p><i class="fa fa-check main-color"></i> &nbsp; Etc.</p>
             </div>
             <div class="col-sm-12 col-md-6">
                 <?= Html::img(Yii::getAlias('@web') . '/images/sliderimages/floral-design.jpg', ['class' => 'm0a img-responsive']) ?>
@@ -58,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <!--                    <i class="fa fa-star fa-services"></i>-->
                     <?= Html::img(Yii::getAlias('@web') . '/images/icons/full-color/128px/star.png') ?>
                     <h3>Experiencia</h3>
-                    <p>Tenemos mas de XX años de experiencia en arreglos florales</p>
+                    <p>Tenemos años de experiencia en arreglos florales</p>
                 </div>
             </div>
             <div class="col-sm-4 xs-box2 wbr-box">
@@ -85,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row mt20 mb20">
             <div class="col-sm-12">
                 <h2 class="wsection-title">Nuestra Visión</h2>
-                <p class="text-center mb0">Nuestra visión es transformar la belleza de las flores, en obras expresivas y sorprender a tu ser querido.</p>
+                <p class="text-center mb0" style="font-size: 18px">Nuestra visión es transformar la belleza de las flores, en obras expresivas y sorprender a tu ser querido.</p>
             </div>
         </div>
     </div>
