@@ -13,17 +13,12 @@ $this->title = 'Florería Linda Primavera';
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
             <?= Html::img(Yii::getAlias('@web') . '/images/slider1.jpg', ['class' => 'm0a']) ?>
-          </div>
-
-          <div class="item">
-            <?= Html::img(Yii::getAlias('@web') . '/images/slider2.jpg', ['class' => 'm0a']) ?>
           </div>
 
           <div class="item">

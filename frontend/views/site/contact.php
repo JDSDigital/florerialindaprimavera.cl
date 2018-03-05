@@ -18,7 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-7 contact-wsection" style="color: inherit;">
                 <h2 class="wsection-title st2 text-left mt10 mb25">Comunícate con nosotros</h2>
-                <p class="contact-p">Atencion al cliente lunes a viernes 10 hrs - 20hrs sábados. 10:30 hrs - 16 hrs <br />Forma de pago : débito,  crédito, transferencia, cheque, efectivo.</p>
+                <p class="contact-p">
+                    Atención al cliente:<br />
+                    Lunes a viernes de 10hrs a 20hrs<br />
+                    Sábados de 10:30hrs a 16hrs <br />
+                    Formas de pago: Débito, crédito, transferencia, cheque o efectivo.
+                </p>
                 <address class="mb50">
                     <p><i class="fa fa-map-marker"></i>  Marcoleta 372 - Local 24. Santiago, Chile</p>
                     <p><i class="fa fa-phone"></i>  +56 9 7818 1442</p>
