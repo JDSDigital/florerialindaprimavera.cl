@@ -67,7 +67,10 @@ $products = Products::find()->where(['status' => Products::STATUS_ACTIVE])->limi
                     <p class="m0">CONTACTO: +56 9 7818 1442 | contacto@floreríalindaprimavera.cl</p>
                 </div>
                 <div class="col-xs-2 text-right">
-                    <p class="m0"><a target="_blank" title="Facebook" href="https://www.facebook.com/Floreria-Linda-Primavera-1924980567819540/"><i class="fa fa-facebook box-icon color-white facebook"></i></a></p>
+                    <p class="m0">
+                      <a target="_blank" title="Facebook" href="https://www.facebook.com/Floreria-Linda-Primavera-1924980567819540/"><i class="fa fa-facebook box-icon color-white facebook"></i></a>
+                      <a target="_blank" title="instagram" href="https://www.instagram.com/florerialindaprimavera/"><i class="fa fa-instagram box-icon color-white instagram"></i></a>
+                    </p>
                 </div>
             </div>
         </div>
